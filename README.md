@@ -1,2 +1,1 @@
-# SberClick
-Sber.Click
+# sber-friend
