@@ -1,0 +1,2 @@
+# SberClick
+Sber.Click
