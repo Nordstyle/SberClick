@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
     <Container>
       <Router>
         <Switch>
-          <Route path="/">test</Route>
+          <Route path="/">test1</Route>
         </Switch>
       </Router>
     </Container>
