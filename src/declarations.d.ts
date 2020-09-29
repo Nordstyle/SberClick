@@ -19,6 +19,8 @@ declare module '*.gif' {
 }
 
 declare module '*.svg' {
-  const value: any;
-  export = value;
+  import React = require('react');
+  export const ReactComponent: React.FC<React.SVGAttributes<SVGElement>>;
+  const src: string;
+  export default src;
 }
