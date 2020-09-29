@@ -8,12 +8,12 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const App = (): JSX.Element => {
+const App = () => {
   return (
     <Container>
       <Router>
         <Switch>
-          <Route path="/">test1</Route>
+          <Route path="/">hello world </Route>
         </Switch>
       </Router>
     </Container>

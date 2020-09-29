@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Products = (): JSX.Element => <div> products </div>;
+const Products = () => <div> products </div>;
 
 export default Products;

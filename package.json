@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production --devtool none"
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
   },
   "keywords": [],
   "author": "Anatoliy Z.",
@@ -36,6 +37,8 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "mini-css-extract-plugin": "^0.11.2",
     "prettier": "^2.1.2",
     "ts-loader": "^8.0.4",
@@ -58,5 +61,17 @@
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "npm run format",
+      "npm run lint",
+      "git add --force"
+    ]
   }
 }

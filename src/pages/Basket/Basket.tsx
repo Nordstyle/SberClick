@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Basket = (): JSX.Element => <div> basket </div>;
+const Basket = () => <div> basket </div>;
 
 export default Basket;

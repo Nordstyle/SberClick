@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Delivery = (): JSX.Element => <div> delivery </div>;
+const Delivery = () => <div> delivery </div>;
 
 export default Delivery;
