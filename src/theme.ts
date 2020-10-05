@@ -9,6 +9,6 @@ export const theme = {
     paper: '#FFFFFF',
     default: '#F6F9FB',
     secondary: '#19BD50',
-    light: 'gba(0, 0, 0, 0.04)',
+    light: 'rgba(0, 0, 0, 0.04)',
   },
 };

@@ -22,8 +22,8 @@ const Container = styled.div`
 const App = () => (
   <ThemeProvider theme={theme}>
     <Container>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           {routes.map(({ path, name, component }) => (
             <Route
