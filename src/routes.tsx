@@ -1,13 +1,11 @@
-import React from 'react';
-
 import Basket from './pages/Basket/Basket';
 import Delivery from './pages/Delivery/Delivery';
 import Orders from './pages/Orders/Orders';
 import Products from './pages/Products/Products';
 
 export default [
-  { path: '/products', name: 'Товары', component: <Products /> },
-  { path: '/orders', name: 'Заказы', component: <Orders /> },
-  { path: '/delivery', name: 'Доставки', component: <Delivery /> },
-  { path: '/basket', name: 'Корзина', component: <Basket /> },
+  { path: '/products', name: 'Товары', Component: Products },
+  { path: '/orders', name: 'Заказы', Component: Orders },
+  { path: '/delivery', name: 'Доставки', Component: Delivery },
+  { path: '/basket', name: 'Корзина', Component: Basket },
 ];

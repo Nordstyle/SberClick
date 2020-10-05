@@ -25,7 +25,7 @@ const App = () => (
       <Router>
         <Header />
         <Switch>
-          {routes.map(({ path, name, component }) => (
+          {routes.map(({ path, name, Component }) => (
             <Route
               exact
               path={path}
@@ -42,8 +42,8 @@ const App = () => (
                       : path,
                     ...rest,
                   }));
-                console.log({ crumbs });
-                return <section>{component}</section>;
+
+                return <Component crumbs={crumbs} />;
               }}
             />
           ))}
