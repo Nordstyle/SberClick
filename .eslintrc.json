@@ -37,6 +37,8 @@
     "no-continue": "off",
     "react/jsx-filename-extension": "off",
     "no-use-before-define": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off"
   }
 }
