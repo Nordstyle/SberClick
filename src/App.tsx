@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
+import routes from './routes';
 import { Header } from './components/Header/Header';
 import { theme } from './theme';
 
@@ -24,7 +25,28 @@ const App = () => (
       <Header />
       <Router>
         <Switch>
-          <Route path="/">hello world </Route>
+          {routes.map(({ path, name, component }) => (
+            <Route
+              exact
+              path={path}
+              key={name}
+              render={(props) => {
+                const crumbs = routes
+                  .filter(({ path }) => props.match.path.includes(path))
+                  .map(({ path, ...rest }) => ({
+                    path: Object.keys(props.match.params).length
+                      ? Object.keys(props.match.params).reduce(
+                          (path, param) => path.replace(`:${param}`, props.match.params[param]),
+                          path
+                        )
+                      : path,
+                    ...rest,
+                  }));
+                console.log({ crumbs });
+                return <section>{component}</section>;
+              }}
+            />
+          ))}
         </Switch>
       </Router>
     </Container>
