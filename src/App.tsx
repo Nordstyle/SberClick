@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
 import { Header } from './components/Header/Header';
+import { theme } from './theme';
 
 WebFont.load({
   google: {
@@ -18,14 +19,16 @@ const Container = styled.div`
 `;
 
 const App = () => (
-  <Container>
-    <Header />
-    <Router>
-      <Switch>
-        <Route path="/">hello world </Route>
-      </Switch>
-    </Router>
-  </Container>
+  <ThemeProvider theme={theme}>
+    <Container>
+      <Header />
+      <Router>
+        <Switch>
+          <Route path="/">hello world </Route>
+        </Switch>
+      </Router>
+    </Container>
+  </ThemeProvider>
 );
 
 export default App;
