@@ -58,8 +58,8 @@ export const HeaderNavButton = styled(NavLink)`
 `;
 
 export const HeaderNavCount = styled.div`
-  min-height: 21px;
-  min-width: 21px;
+  min-height: 22px;
+  min-width: 22px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
