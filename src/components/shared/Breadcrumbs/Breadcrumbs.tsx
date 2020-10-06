@@ -21,10 +21,6 @@ interface BreadcrumbsProps {
 export const Breadcrumbs = (props: BreadcrumbsProps) => {
   const { crumbs } = props;
 
-  if (crumbs.length <= 1) {
-    return null;
-  }
-
   return (
     <BreadcrumbsLinkContainer>
       {crumbs.map(({ name, path }, key) =>
