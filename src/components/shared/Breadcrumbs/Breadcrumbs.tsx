@@ -1,5 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  BreadcrumbsLink,
+  BreadcrumbsLinkContainer,
+  BreadcrumbsSeparator,
+  BreadcrumbWrapper,
+} from './Breadcrumbs.styled';
+
+import { ReactComponent as Separator } from '../../../assets/svg/bread_separator.svg';
 
 export interface Breadcrumb {
   path: string;
@@ -19,16 +26,19 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
   }
 
   return (
-    <div>
+    <BreadcrumbsLinkContainer>
       {crumbs.map(({ name, path }, key) =>
         key + 1 === crumbs.length ? (
           <span key={path}>{name}</span>
         ) : (
-          <Link key={path} to={path}>
-            {name}
-          </Link>
+          <BreadcrumbWrapper key={path}>
+            <BreadcrumbsLink to={path}>{name}</BreadcrumbsLink>
+            <BreadcrumbsSeparator>
+              <Separator />
+            </BreadcrumbsSeparator>
+          </BreadcrumbWrapper>
         )
       )}
-    </div>
+    </BreadcrumbsLinkContainer>
   );
 };
