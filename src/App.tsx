@@ -5,6 +5,7 @@ import WebFont from 'webfontloader';
 import routes from './routes';
 import { Header } from './components/Header/Header';
 import { theme } from './theme';
+import { generateBreadcrumbs } from './utils/generateBreadcrumbs';
 
 WebFont.load({
   google: {
@@ -30,19 +31,9 @@ const App = () => (
               path={path}
               key={name}
               render={(props) => {
-                const crumbs = routes
-                  .filter(({ path }) => props.match.path.includes(path))
-                  .map(({ path, ...rest }) => ({
-                    path: Object.keys(props.match.params).length
-                      ? Object.keys(props.match.params).reduce(
-                          (path, param) => path.replace(`:${param}`, props.match.params[param]),
-                          path
-                        )
-                      : path,
-                    ...rest,
-                  }));
+                const crumbs = generateBreadcrumbs(routes, props);
 
-                return <Component crumbs={crumbs} />;
+                return <Component {...props} crumbs={crumbs} />;
               }}
             />
           ))}

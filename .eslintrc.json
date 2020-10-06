@@ -39,6 +39,7 @@
     "no-use-before-define": "off",
     "no-shadow": "off",
     "react/no-unused-prop-types": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }
