@@ -4,13 +4,14 @@ import { LayoutSidebarItemIcon, LayoutSidebarItemContainer, LayoutSidebarItemTit
 interface LayoutSidebarItemProps {
   title: string;
   src: string;
+  to: string;
 }
 
 export const LayoutSidebarItem = (props: LayoutSidebarItemProps) => {
-  const { title, src } = props;
+  const { title, src, to } = props;
 
   return (
-    <LayoutSidebarItemContainer>
+    <LayoutSidebarItemContainer to={to}>
       <LayoutSidebarItemIcon src={src} />
       <LayoutSidebarItemTitle>{title}</LayoutSidebarItemTitle>
     </LayoutSidebarItemContainer>

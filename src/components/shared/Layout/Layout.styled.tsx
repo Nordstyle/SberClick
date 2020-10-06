@@ -11,16 +11,21 @@ export const LayoutSidebar = styled.div`
   margin-right: 32px;
 `;
 
-export const LayoutSidebarItemContainer = styled.div`
+export const LayoutSidebarItemContainer = styled(NavLink)`
   width: 254px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  text-decoration: none;
   padding: 10px 16px;
   margin-bottom: 8px;
   background: ${(props) => props.theme.background.paper};
   border-radius: 12px;
   cursor: pointer;
+  color: ${(props) => props.theme.text.main};
+  &.active {
+    color: ${(props) => props.theme.text.secondary};
+  }
   &:last-child {
     margin-bottom: 0px;
   }
@@ -32,7 +37,6 @@ export const LayoutSidebarItemTitle = styled.p`
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: ${(props) => props.theme.text.main};
 `;
 
 export const LayoutSidebarItemIcon = styled.img`

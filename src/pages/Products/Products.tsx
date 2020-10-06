@@ -21,19 +21,24 @@ export const Products = (props: ProductsProps) => {
       <Heading>Услуги</Heading>
       <Layout>
         <LayoutSidebar>
-          <LayoutSidebarItem title="Автопополнение _plus Автопополнение _plus Автопополнение _plus" src={CartImg} />
-          <LayoutSidebarItem title="Срочный заказ" src={CartImg} />
-          <LayoutSidebarItem title="Вывоз неиспользованного оборудования" src={CartImg} />
+          <LayoutSidebarItem
+            title="Автопополнение _plus Автопополнение _plus Автопополнение _plus"
+            to="/products/category1/"
+            src={CartImg}
+          />
+          <LayoutSidebarItem title="Срочный заказ" to="/products/category2/" src={CartImg} />
+          <LayoutSidebarItem title="Вывоз неиспользованного оборудования" to="/products/category3/" src={CartImg} />
         </LayoutSidebar>
         <LayoutContent>
           <LayoutCategoryItem
             title="Категория 1 Категория 1 Категория 1 Категория 1"
-            to="/"
+            subTitle="Тест"
+            to="/products/category1/"
             src={CategoryImg}
             icon={CartImg}
           />
-          <LayoutCategoryItem title="Категория 2" to="/" src={CategoryImg} />
-          <LayoutCategoryItem title="Категория 3" subTitle="Тест" to="/" src={CategoryImg} />
+          <LayoutCategoryItem title="Категория 2" to="/products/category2/" src={CategoryImg} />
+          <LayoutCategoryItem title="Категория 3" subTitle="Тест" to="/products/category3/" src={CategoryImg} />
         </LayoutContent>
       </Layout>
     </section>
