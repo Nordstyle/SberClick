@@ -3,7 +3,7 @@ import { Heading } from '../../components/shared/Typography/Typography';
 import { Breadcrumb, Breadcrumbs } from '../../components/shared/Breadcrumbs/Breadcrumbs';
 import { Layout, LayoutContent, LayoutSidebar } from '../../components/shared/Layout/Layout.styled';
 import { LayoutSidebarItem } from '../../components/shared/Layout/LayoutSidebarItem';
-import { LayoutCategoryItem } from '../../components/shared/Layout/LayoutCategoryItem';
+import { CategoryItem } from '../../components/shared/CategoryItem/CategoryItem';
 
 import CartImg from '../../assets/cart.png';
 import CategoryImg from '../../assets/category_card.png';
@@ -30,15 +30,15 @@ export const Products = (props: ProductsProps) => {
           <LayoutSidebarItem title="Вывоз неиспользованного оборудования" to="/products/category3/" src={CartImg} />
         </LayoutSidebar>
         <LayoutContent>
-          <LayoutCategoryItem
+          <CategoryItem
             title="Категория 1 Категория 1 Категория 1 Категория 1"
             subTitle="Тест"
             to="/products/category1/"
             src={CategoryImg}
             icon={CartImg}
           />
-          <LayoutCategoryItem title="Категория 2" to="/products/category2/" src={CategoryImg} />
-          <LayoutCategoryItem title="Категория 3" subTitle="Тест" to="/products/category3/" src={CategoryImg} />
+          <CategoryItem title="Категория 2" to="/products/category2/" src={CategoryImg} />
+          <CategoryItem title="Категория 3" subTitle="Тест" to="/products/category3/" src={CategoryImg} />
         </LayoutContent>
       </Layout>
     </section>
