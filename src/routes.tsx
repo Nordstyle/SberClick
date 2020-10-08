@@ -1,7 +1,9 @@
-import Basket from './pages/Basket/Basket';
-import Delivery from './pages/Delivery/Delivery';
-import Orders from './pages/Orders/Orders';
-import Products from './pages/Products/Products';
+import { lazy } from 'react';
+
+const Basket = lazy(() => import('./pages/Basket/Basket'));
+const Delivery = lazy(() => import('./pages/Basket/Basket'));
+const Orders = lazy(() => import('./pages/Delivery/Delivery'));
+const Products = lazy(() => import('./pages/Products/Products'));
 
 export default [
   { path: '/products', name: 'Товары', Component: Products },

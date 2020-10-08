@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
-import routes from './routes';
+// import routes from './routes';
 import { Header } from './components/Header/Header';
 import { theme } from './theme';
-import { generateBreadcrumbs } from './utils/generateBreadcrumbs';
+// import { generateBreadcrumbs } from './utils/generateBreadcrumbs';
+
+const Products = lazy(() => import('./pages/Products/Products'));
 
 WebFont.load({
   google: {
@@ -24,20 +26,23 @@ const App = () => (
     <Container>
       <Router>
         <Header />
-        <Switch>
-          {routes.map(({ path, name, Component }) => (
-            <Route
-              exact
-              path={path}
-              key={name}
-              render={(props) => {
-                const crumbs = generateBreadcrumbs(routes, props);
+        <Suspense fallback={<div> loading </div>}>
+          <Switch>
+            <Route exact path="/products" component={Products} />
+            {/* {routes.map(({ path, name, Component }) => (
+              <Route
+                exact
+                path={path}
+                key={name}
+                render={(props) => {
+                  const crumbs = generateBreadcrumbs(routes, props);
 
-                return <Component {...props} crumbs={crumbs} />;
-              }}
-            />
-          ))}
-        </Switch>
+                  return <Component {...props} crumbs={crumbs} />;
+                }}
+              />
+            ))} */}
+          </Switch>
+        </Suspense>
       </Router>
     </Container>
   </ThemeProvider>
